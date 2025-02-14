@@ -1,0 +1,18 @@
+# /etc/systemd/system/home_backup.service
+
+[Unit]
+Description=Home Directory Backup Service
+After=network.target
+
+[Service]
+Type=simple
+User=skhan  # Replace with the user that should run the backup
+ExecStart=/home/skhan/bin/home_backup.sh
+Restart=on-failure # Restart if the script fails
+#Optional: Set a timeout
+TimeoutStartSec=0 # or a specific time like 300s
+StandardOutput=append:/var/log/home_backup.log  # Redirect output to the log file
+StandardError=append:/var/log/home_backup.log  # Redirect errors to the log file
+
+[Install]
+WantedBy=multi-user.target
