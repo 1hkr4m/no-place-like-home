@@ -3,7 +3,8 @@
 USERNAME=skhan
 
 # Install the service
-cp backup_script.sh /home/$USERNAME/bin/ 
+cp backup_script.sh /home/$USERNAME/bin/
+sudo chmod +x /home/$USERNAME/bin/home_backup.sh
 cp home_backup.service /etc/systemd/system/
 systemctl enable sync_home.service
 systemctl start sync_home.service

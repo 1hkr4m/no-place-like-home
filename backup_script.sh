@@ -1,5 +1,22 @@
 #!/bin/bash
 
+rsync -av  --delete \
+            --exclude='.cache' \
+            --exclude='Books' \
+            --exclude='Citadel' \
+            --exclude='Downloads' \
+            --exclude='ISO' \
+            --exclude='Legacy' \
+            --exclude='Music' \
+            --exclude='Soft' \
+            --exclude='TI' \
+            --exclude='Videos' \
+            --exclude='Git' \
+            --exclude='VMs' \
+            --exclude='VMware' \
+            /home/ /media/skhan/Backup
+
+
 # Configuration
 SOURCE_DIR="$HOME"  # Source directory (your home folder)
 DEST_DIR="/backup"   # Destination directory (/backup folder)
